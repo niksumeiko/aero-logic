@@ -65,7 +65,7 @@ Cypress.Commands.add('injectFakeAdapter', <T>(adapter: Adapter<T>, stub: { body:
   const current = Cypress.currentTest.titlePath.join(' > ')
 
   setFakes(current, {
-    [adapter._name]: {
+    [adapter._name.toLowerCase()]: {
       statusCode: 200,
       ...stub,
     },
