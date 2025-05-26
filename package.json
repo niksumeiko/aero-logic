@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md}'",
     "test:unit": "vitest",
     "test:unit:coverage": "vitest run --coverage",
     "test:integration": "cypress open --e2e --browser electron"
@@ -30,7 +31,9 @@
     "cypress": "^13.17.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.2",
+    "eslint-config-prettier": "^10.1.5",
     "postcss": "^8",
+    "prettier": "^3.5.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
     "vitest": "^2.1.8"
