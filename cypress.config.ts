@@ -9,7 +9,7 @@ export default defineConfig({
   // blockHosts: ['!*localhost*'],
   e2e: {
     baseUrl: 'http://localhost:3000',
-    specPattern: 'src/**/__tests__/*.e2m.ts',
+    specPattern: 'src/**/__tests__/*.integration.ts',
     viewportWidth: 680,
     viewportHeight: 768,
     setupNodeEvents(on, config) {

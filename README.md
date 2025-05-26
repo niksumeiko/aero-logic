@@ -30,12 +30,16 @@ The project is configured for different types of tests.
 pnpm test:unit
 ```
 
-**Integration tests** (cypress) will pick files matching `__tests__/*.e2m.ts` pattern:
+**Integration tests** (cypress) will pick files matching `__tests__/*.integration.ts` pattern:
 ```shell
-pnpm test:e2m
+pnpm test:integration
 ```
 
-ℹ For integration tests, the app shall be compiled and running with the `NEXT_PUBLIC_PHASE=test` environmental variable.
+ℹ For integration tests, the app shall stopped (if currently running via the `pnpm dev`) and running in the background with the `NEXT_PUBLIC_PHASE=test` environmental variable:
+
+```bash
+NEXT_PUBLIC_PHASE=test pnpm dev
+```
 
 &nbsp;
 ### For my mentees
