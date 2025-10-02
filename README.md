@@ -35,30 +35,4 @@ pnpm test:unit
 pnpm test:integration
 ```
 
-ℹ For integration tests, the app shall stopped (if currently running via the `pnpm dev`) and running in the background with the `NEXT_PUBLIC_PHASE=test` environmental variable:
-
-```bash
-NEXT_PUBLIC_PHASE=test pnpm dev
-```
-
-&nbsp;
-### For my mentees
-
-- [x] Fork this [aero-logic](https://github.com/niksumeiko/aero-logic) kata to your GitHub account:  
-  _Here's how: [https://docs.github.com/…/fork-a-repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository)_
-
-- [x] Give me access to your `aero-logic` kata fork:  
-  Settings > Collaborators > Manage Access > Add people > [niksumeiko](https://github.com/niksumeiko)  
-  _Here's how: [https://docs.github.com…/inviting-collaborators-to-a-personal-repository](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository#inviting-a-collaborator-to-a-personal-repository)_
-
-- [x] Navigate into your local mentorship repository  
-  _The one we run discussions in_
-
-- [x] Add your fork of the `aero-logic` kata as a submodule  
-  _Here're more details, if necessary: https://github.blog/open-source/git/working-with-submodules_
-```bash
-$ submodule add git@github.com:YOUR_GITHUB_USERNAME/aero-logic.git
-```
-
-- [x] Commit and push changes to your local mentorship repository
->ℹ️ If you want, you can make a fork of the `aero-logic` repo private. From our collaboration perspective, it doesn't matter whether it's public or private because we both will have access to your fork (even if it's private).
+ℹ For integration tests, a separate instance of the app will be running in the background with the `NEXT_PUBLIC_PHASE=test` environmental variable.
