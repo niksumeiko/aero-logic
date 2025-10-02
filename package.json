@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack --port 3000",
+    "kill:dev": "kill-port ${PORT:-3000}",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md}'",
     "test:unit": "vitest",
     "test:unit:coverage": "vitest run --coverage",
-    "test:integration": "cypress open --e2e --browser electron"
+    "test:integration": "pnpm kill:dev && concurrently -k -s first -n web,cy \"cross-env NEXT_PUBLIC_PHASE=test pnpm dev\" \"cypress open --e2e --browser electron\""
   },
   "dependencies": {
     "lodash": "^4.17.21",
@@ -29,10 +30,13 @@
     "@types/react-dom": "^19.2.0",
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
     "cypress": "^15.3.0",
     "eslint": "^9.36.0",
     "eslint-config-next": "15.5.4",
     "eslint-config-prettier": "^10.1.8",
+    "kill-port": "^2.0.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.14",
